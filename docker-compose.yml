@@ -44,7 +44,9 @@ services:
       - TZ=${TZ}
 volumes:
   db-store:
-
+  # mysqlは権限の問題で共通の場所にlogを作れない
+  # volumesを作成してもダメだった
+  
 # ${}で.envファイルから変数を使用可能
 # environment の TZ は php.ini で使用
 # environment の DB_* 設定値はLaravel設定用の環境変数
